@@ -734,6 +734,8 @@ var iteraciones = 270;
 
           if(d!="none"){
           d3.select('[id="'+d.data.id+'"]').classed('hovered', true);
+            
+            console.log("ID Clickeado:" + d.data.id);
 
           tooltip.transition()
                 .duration(50)
@@ -925,6 +927,7 @@ function creaLeaflet(filterItems) {
         return false;
     }
     return true;
+<<<<<<< HEAD
   }).forEach(function (d,i) {
         L.circleMarker(d.geoLatLong, {
             renderer: myRenderer,
@@ -944,6 +947,30 @@ function creaLeaflet(filterItems) {
                   tooltipMap.select("#estado").html(d.estado);
                   tooltipMap.select("#ano").html(d.ano);
                   tooltipMap.select("#barrio").html(d.barrio);
+=======
+  }).forEach(function (dd) {
+
+    L.circleMarker(dd.geoLatLong, {
+                            renderer: myRenderer,
+                            id: dd.id,
+                            color: colorScale(dd.tema)})
+        .addTo(layerGroup)
+        .on('click', function (){
+            var ee = nodes.filter(function (item) {
+              return +item.id == +dd.id ? 1 : 0 ;
+              })[0];
+                  
+                  console.log("ID Clickeado:"+dd.id);
+                  tooltipMap.transition()
+                      .duration(50)
+                      .style("opacity", .9);
+                    tooltipMap.select("#title").html(ee.nombre);
+                    tooltipMap.select("#presupuesto").html(numberFormat(ee.presupuesto));
+                    tooltipMap.select("#votos").html(ee.votos);
+                    tooltipMap.select("#estado").html(ee.estado);
+                    tooltipMap.select("#ano").html(ee.ano);
+                    tooltipMap.select("#barrio").html(ee.barrio);
+>>>>>>> 0fd1a82... Agregado log de IDS en console para debug
         
         });
       });
