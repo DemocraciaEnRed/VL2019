@@ -896,11 +896,13 @@ function creaLeaflet(filterItems) {
     var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+      // https://docs.mapbox.com/help/troubleshooting/migrate-legacy-static-tiles-api/
+      // Now it works but it needed to be migrated.
+      mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
 
 
     mymap = L.map('mapid').setView([-34.5300, -58.5041], 13);
-    L.tileLayer(mbUrl, { id: 'mapbox.streets', attribution: mbAttr }).addTo(mymap);
+    L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', attribution: mbAttr,tileSize: 512,zoomOffset: -1, accessToken: 'pk.eyJ1IjoiZGVtb2NyYWNpYWVucmVkIiwiYSI6ImNrbDFjNXFwMTBsMjYyb3BkZmtqdjl4c3MifQ.4mDUb0pvdPhiV4X8OFlZiQ' }).addTo(mymap);
 
     mymap.options.minZoom = 13;
     mymap.options.maxZoom = 16;
