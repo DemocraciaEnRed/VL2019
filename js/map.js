@@ -46,7 +46,7 @@ var estadoActivo;
 
 var yTimeline = d3.scalePoint()
   .range([height - 150, 120])
-  .domain(d3.range(2013, 2020));
+  .domain(d3.range(2013, 2021));
 
 if (isSmallDevice) yTimeline.range([50, height-20])
 
@@ -294,7 +294,7 @@ function ready (results){
   // --------- BUBBLES
      
           simulaNodos(nodes, "centroideGeo", "intro");                        
-          simulaNodos(nodes,"longlat","mapa");
+          simulaNodos(nodes, "longlat","mapa");
           simulaNodos(nodes, "centroide", "barrios")
           simulaNodos(nodes, "sextos", "temas")
           simulaNodos(nodes, "timeline", "lineadetiempo")
@@ -699,6 +699,7 @@ var iteraciones = 270;
               var simulation = d3.forceSimulation(nodes)
                 .force('charge', d3.forceManyBody().strength(1))
                 .force('x', d3.forceX().x(function (d) {
+                  console.log(d)
                   return d[centro][0];
                 }).strength(isSmallDevice ? 2 : 1))
                 .force('y', d3.forceY().y(function (d) {

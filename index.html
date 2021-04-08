@@ -54,8 +54,8 @@
 			<div class="header-item"><a class="header-link"
 					href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/datos"
 					style="color: rgb(140, 30, 129);">Datos</a></div>
-			<div class="header-item"><a class="header-link"
-					href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/herramientas">Herramientas</a></div>
+			<!--<div class="header-item"><a class="header-link"
+					href="https://presupuestoparticipativo.vicentelopez.gob.ar/s/herramientas">Herramientas</a></div>-->
 			<div class="header-item"><a class="header-link anon-user"
 					href="https://presupuestoparticipativo.vicentelopez.gob.ar/signin?ref=%2Fs%2Fdatos">Ingresar</a></div>
 		</ul>
@@ -65,7 +65,7 @@
 			<div class="banner"></div>
 			<div class="contenedor">
 				<div class="fondo-titulo">
-					<h1>¡Más de 400 proyectos ya ejecutados!</h1>
+					<h1>¡Más de 450 proyectos ya ejecutados!</h1>
 				</div>
 			</div>
 		</section>
@@ -79,17 +79,17 @@
 					<div class="card-deck" >
 						<div class="card wow fadeInUp"  data-wow-delay="0.6s">
 							<div class="icono tiempo"></div>
-							<p>8 años de<br>
+							<p>9 años de<br>
 							<b>Presupuesto Participativo</b></p>
 						</div>
 						<div class="card wow fadeInUp"  data-wow-delay="1.2s">
 							<div class="icono dinero"></div>
 							<p>Total invertido:<br>
-							<b>$ 250 millones</b></p>
+							<b>$ 360 millones</b></p>
 						</div>
 						<div class="card wow fadeInUp"  data-wow-delay="1.8s">
 							<div class="icono proyectos"></div>
-							<p>Más de 400<br>
+							<p>Más de 450<br>
 							<b>proyectos ejecutados</b></p>
 						</div>
 					</div>
@@ -430,7 +430,7 @@
 			</article>
 
 
-		<article class="seccion-datos card">
+		<!--<article class="seccion-datos card">
 			<h3 class="wow fadeInUp">¡Gracias por ser parte!</h3>
 			<figure class="graph-box">
 				<div class="graph-img">
@@ -439,7 +439,7 @@
 				</div>
 		
 			</figure>
-		</article>
+		</article>-->
 			</div>
 		</section>
 	</main>
@@ -511,11 +511,12 @@
 			step.style('height', stepH + 'px');
 
 			var figureHeight = height;
-			var figureMarginTop = 70;//(window.innerHeight - height) / 2  
+			// var figureMarginTop = 70;//(window.innerHeight - height) / 2  
 
 			figure.attr("id","topContainer")
 				//.style('height', figureHeight + 'px')
-				.style('top', figureMarginTop + 'px');
+				// .style('top', figureMarginTop + 'px');
+				.style('top', '25%');
 
 
 			// 3. tell scrollama to update new element dimensions
